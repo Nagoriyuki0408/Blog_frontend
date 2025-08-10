@@ -1,19 +1,18 @@
 <template>
-  <div id="app">
-    <h1>欢迎来到我的博客</h1>
-    <router-view></router-view>
-  </div>
+    <div>
+        <Navbar />
+        <router-view />
+    </div>
 </template>
 
-<script>
-export default {
-  name: 'App'
-}
+<script setup>
+import Navbar from "./components/Navbar.vue";
 </script>
 
-<style scoped>
-h1 {
-  text-align: center;
-  margin-top: 20px;
+<style>
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
 }
 </style>
