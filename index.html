@@ -1,322 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Blog - 测试版</title>
-        <meta
-            name="description"
-            content="一个现代化的博客平台，分享技术与生活。"
-        />
-        <meta name="keywords" content="博客, 技术, 生活, 前端, 后端" />
-        <meta name="author" content="你的名字" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
-        />
-        <style>
-            body {
-                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-                background: #fafafa;
-                color: #333;
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-            }
-            header {
-                background: #ff6b6b;
-                color: white;
-                padding: 1em 2em;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
-            header h1 {
-                margin: 0;
-                font-weight: 700;
-                font-size: 1.5rem;
-            }
-            nav a {
-                color: white;
-                text-decoration: none;
-                margin-left: 1.5em;
-                font-weight: 600;
-                transition: color 0.3s ease;
-            }
-            nav a:hover {
-                color: #ffeaea;
-            }
-            main {
-                flex: 1;
-                max-width: 960px;
-                margin: 2em auto;
-                display: grid;
-                grid-template-columns: 2fr 1fr;
-                gap: 2em;
-            }
-            article {
-                display: flex;
-                flex-direction: column;
-                gap: 2em;
-            }
-            article h2,
-            article h3 {
-                color: #ff6b6b;
-                margin-top: 0;
-            }
-            article p {
-                line-height: 1.6;
-            }
-            article .post-date {
-                font-size: 0.85rem;
-                color: #999;
-                margin-bottom: 0.5em;
-            }
-            aside {
-                background: #fff;
-                padding: 1em;
-                border-radius: 6px;
-                box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-                display: flex;
-                flex-direction: column;
-                gap: 2em;
-                height: fit-content;
-            }
-            aside h3 {
-                border-bottom: 2px solid #ff6b6b;
-                padding-bottom: 0.3em;
-                margin-bottom: 1em;
-                font-weight: 700;
-            }
-            aside ul {
-                list-style: none;
-                padding-left: 0;
-                margin: 0;
-            }
-            aside ul li {
-                margin-bottom: 0.7em;
-            }
-            aside ul li a {
-                text-decoration: none;
-                color: #ff6b6b;
-                font-weight: 600;
-            }
-            aside ul li a:hover {
-                text-decoration: underline;
-            }
-            form {
-                display: flex;
-                flex-direction: column;
-            }
-            form label {
-                font-weight: 600;
-                margin-bottom: 0.3em;
-            }
-            form input[type="email"] {
-                padding: 0.5em;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                margin-bottom: 0.8em;
-                font-size: 1rem;
-            }
-            form button {
-                background: #ff6b6b;
-                border: none;
-                color: white;
-                font-weight: 700;
-                padding: 0.6em;
-                border-radius: 4px;
-                cursor: pointer;
-                transition: background 0.3s ease;
-            }
-            form button:hover {
-                background: #e05555;
-            }
-            footer {
-                background: #f5f5f5;
-                text-align: center;
-                padding: 1em 0;
-                font-size: 0.9rem;
-                color: #666;
-                margin-top: auto;
-            }
-            /* 社交图标简单样式 */
-            .social-icons {
-                display: flex;
-                justify-content: center;
-                gap: 1.2em;
-                margin-top: 0.5em;
-            }
-            .social-icons a {
-                color: #ff6b6b;
-                font-size: 1.4rem;
-                text-decoration: none;
-            }
-            .social-icons a:hover {
-                color: #e05555;
-            }
-            /* 响应式 */
-            @media (max-width: 720px) {
-                main {
-                    display: block;
-                    margin: 1em;
-                }
-                aside {
-                    margin-top: 2em;
-                }
-            }
-        </style>
-        <!-- 引入FontAwesome CDN方便用社交图标 -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-    </head>
-    <body>
-        <header>
-            <h1>My Blog</h1>
-            <nav>
-                <a href="#">首页</a>
-                <a href="#">技术</a>
-                <a href="#">生活</a>
-                <a href="#">关于我</a>
-            </nav>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="一个现代化的博客平台，分享技术与生活。" />
+    <meta name="keywords" content="博客, 技术, 生活, 前端, 后端, Vue.js" />
+    <meta name="author" content="My Blog" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com/" />
+    <meta property="og:title" content="My Blog - 现代化博客平台" />
+    <meta property="og:description" content="一个现代化的博客平台，分享技术与生活。" />
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
 
-        <main>
-            <article>
-                <section>
-                    <h2>欢迎来到我的博客！</h2>
-                    <p class="post-date">发布于 2025年8月11日</p>
-                    <p>
-                        这是一个分享技术和生活的现代化博客平台，记录我的学习和创作历程。希望你能在这里找到有用的知识和灵感！
-                    </p>
-                </section>
-
-                <section>
-                    <h2>最新文章</h2>
-                    <article>
-                        <h3><a href="#">用Vite搭建现代前端项目</a></h3>
-                        <p class="post-date">发布于 2025年8月10日</p>
-                        <p>
-                            介绍如何用Vite快速搭建一个现代化的前端开发环境，提升开发效率和体验。
-                        </p>
-                    </article>
-                    <article>
-                        <h3><a href="#">Linux下的剪切板管理神器</a></h3>
-                        <p class="post-date">发布于 2025年8月9日</p>
-                        <p>
-                            分享几个Linux系统下实用的剪切板管理工具，帮助提升你的工作效率。
-                        </p>
-                    </article>
-                </section>
-
-                <section>
-                    <h2>最新评论</h2>
-                    <article>
-                        <p><strong>小明</strong> 于 2025年8月11日 评论：</p>
-                        <blockquote>
-                            这篇文章讲得很详细，学到了不少，谢谢分享！
-                        </blockquote>
-                    </article>
-                    <article>
-                        <p><strong>小红</strong> 于 2025年8月10日 评论：</p>
-                        <blockquote>Vite确实很棒，启动速度超级快！</blockquote>
-                    </article>
-                </section>
-            </article>
-
-            <aside>
-                <section>
-                    <h3>热门标签</h3>
-                    <ul>
-                        <li><a href="#">前端</a></li>
-                        <li><a href="#">Linux</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                        <li><a href="#">生活日记</a></li>
-                        <li><a href="#">工具推荐</a></li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>订阅我们的新闻邮件</h3>
-                    <form id="subscribeForm" onsubmit="subscribe(event)">
-                        <label for="email">邮箱地址</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="请输入邮箱"
-                            required
-                        />
-                        <button type="submit">订阅</button>
-                    </form>
-                </section>
-
-                <section>
-                    <h3>友情链接</h3>
-                    <ul>
-                        <li>
-                            <a
-                                href="https://www.example.com"
-                                target="_blank"
-                                rel="noopener"
-                                >示例网站</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="https://github.com"
-                                target="_blank"
-                                rel="noopener"
-                                >GitHub</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="https://stackoverflow.com"
-                                target="_blank"
-                                rel="noopener"
-                                >Stack Overflow</a
-                            >
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>关于我</h3>
-                    <p>
-                        一名热爱编程和生活的博主，喜欢探索技术的美好，也分享成长的点滴。
-                    </p>
-                    <div class="social-icons" aria-label="社交媒体链接">
-                        <a href="#" title="微博" aria-label="微博"
-                            ><i class="fab fa-weibo"></i
-                        ></a>
-                        <a href="#" title="GitHub" aria-label="GitHub"
-                            ><i class="fab fa-github"></i
-                        ></a>
-                        <a href="#" title="Twitter" aria-label="Twitter"
-                            ><i class="fab fa-twitter"></i
-                        ></a>
-                    </div>
-                </section>
-            </aside>
-        </main>
-
-        <footer>&copy; 2025 你的名字。保留所有权利。</footer>
-
-        <script>
-            function subscribe(event) {
-                event.preventDefault();
-                const emailInput = document.getElementById("email");
-                if (emailInput.value) {
-                    alert(`感谢订阅，邮箱：${emailInput.value}！`);
-                    emailInput.value = "";
-                }
-            }
-        </script>
-    </body>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://your-domain.com/" />
+    <meta property="twitter:title" content="My Blog - 现代化博客平台" />
+    <meta property="twitter:description" content="一个现代化的博客平台，分享技术与生活。" />
+    <meta property="twitter:image" content="https://your-domain.com/og-image.jpg" />
+    
+    <title>My Blog - 现代化博客平台</title>
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    
+    <!-- 加载状态样式 -->
+    <style>
+      #app {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease-in-out infinite;
+        margin-right: 1rem;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 加载状态 -->
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">正在加载...</div>
+      </div>
+    </div>
+    
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
